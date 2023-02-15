@@ -2,7 +2,7 @@ local maker = loadstring(game:HttpGet("https://github.com/slf0Dev/my-ui-library-
 local make = maker.Instance
 
 local x = 408
-local y = 500
+local y = 391
 
 local SupportedProperties = {
     "TextTransparency"  , "ImageTransparency" , "BackgroundTransparency"
