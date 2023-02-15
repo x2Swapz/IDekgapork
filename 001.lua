@@ -1,7 +1,7 @@
 local maker = loadstring(game:HttpGet("https://github.com/slf0Dev/my-ui-library-making-utility/raw/main/InstanceMaker.lua"))();
 local make = maker.Instance
 
-local x = 505
+local x = 408
 local y = 500
 
 local SupportedProperties = {
