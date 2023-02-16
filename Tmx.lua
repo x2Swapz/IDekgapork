@@ -81,7 +81,7 @@ local ThemeManager = {} do
 		groupbox:AddLabel('Accent color'):AddColorPicker('AccentColor', { Default = self.Library.AccentColor });
 		groupbox:AddLabel('Outline color'):AddColorPicker('OutlineColor', { Default = self.Library.OutlineColor });
 		groupbox:AddLabel('Font color')	:AddColorPicker('FontColor', { Default = self.Library.FontColor });
-                groupbox:AddButton('Unload', function() Library:Unload() end)
+                groupbox:AddButton{('Unload', function() Library:Unload() end)};
 		
 		local ThemesArray = {}
 		for Name, Theme in next, self.BuiltInThemes do
