@@ -17,7 +17,7 @@ local ThemeManager = {} do
 		['Ubuntu'] 			= { 10, httpService:JSONDecode('{"FontColor":"ffffff","MainColor":"3e3e3e","AccentColor":"e2581e","BackgroundColor":"323232","OutlineColor":"191919"}') },
 	}
 
-	function ThemeManager:ApplyTheme(theme)
+		function ThemeManager:ApplyTheme(theme)
 		local customThemeData = self:GetCustomTheme(theme)
 		local data = customThemeData or self.BuiltInThemes[theme]
 
@@ -87,8 +87,9 @@ local ThemeManager = {} do
 			table.insert(ThemesArray, Name)
 		end
 
-		table.sort(ThemesArray, function(a, b) return self.BuiltInThemes[a][1] < self.BuiltInThemes[b][1] 
-		
+		table.sort(ThemesArray, function(a, b) return self.BuiltInThemes[a][1] < self.BuiltInThemes[b][1] end)
+
+		groupbox:AddDivider()
 		groupbox:AddDropdown('ThemeManager_ThemeList', { Text = 'Theme list', Values = ThemesArray, Default = 1 })
 
 		groupbox:AddButton('Set as default', function()
@@ -100,7 +101,6 @@ local ThemeManager = {} do
 			self:ApplyTheme(Options.ThemeManager_ThemeList.Value)
 		end)
 
-		groupbox:AddDivider()
 		groupbox:AddDropdown('ThemeManager_CustomThemeList', { Text = 'Custom themes', Values = self:ReloadCustomThemes(), AllowNull = true, Default = 1 })
 		groupbox:AddInput('ThemeManager_CustomThemeName', { Text = 'Custom theme name' })
 
