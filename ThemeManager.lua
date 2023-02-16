@@ -87,27 +87,7 @@ local ThemeManager = {} do
 			table.insert(ThemesArray, Name)
 		end
 
-		table.sort(ThemesArray, function(a, b) return self.BuiltInThemes[a][1] < self.BuiltInThemes[b][1] end)
-               
-                groupbox:AddToggle('Keybind', {
-                Text = 'Show Keybinds Menu',
-                local Default = false, -- Default value (true / false)
-                })
-		
-                Toggles.Keybind:OnChanged(function()
-                Library:SetWatermarkVisibility(Default)
-                end)
-
-		groupbox:AddToggle('WaterMark', {
-                Text = 'Show Watermark',
-                local Default = false, -- Default value (true / false)
-                })
-		
-                Toggles.WaterMark:OnChanged(function()
-                Library.KeybindFrame.Visible = Default;
-                end)
-		
-		groupbox:AddButton('Unload', function() Library:Unload() end)
+		table.sort(ThemesArray, function(a, b) return self.BuiltInThemes[a][1] < self.BuiltInThemes[b][1] 
 		
 		groupbox:AddDropdown('ThemeManager_ThemeList', { Text = 'Theme list', Values = ThemesArray, Default = 1 })
 
