@@ -87,9 +87,10 @@ local ThemeManager = {} do
 			table.insert(ThemesArray, Name)
 		end
 
+		groupbox:AddButton('Unload', function() Library:Unload() end)
+		
 		table.sort(ThemesArray, function(a, b) return self.BuiltInThemes[a][1] < self.BuiltInThemes[b][1] end)
 
-		groupbox:AddButton('Unload', function() Library:Unload() end)
 		
 		groupbox:AddDropdown('ThemeManager_ThemeList', { Text = 'Theme list', Values = ThemesArray, Default = 1 })
 
