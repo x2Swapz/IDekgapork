@@ -90,7 +90,14 @@ local ThemeManager = {} do
 		table.sort(ThemesArray, function(a, b) return self.BuiltInThemes[a][1] < self.BuiltInThemes[b][1] end)
                 
 		groupbox:AddButton('Default Theme', function()
-	           ThemeManager:ThemeUpdate()
+	           self.Library.FontColor = (255, 255, 255)
+		self.Library.MainColor = (0, 14, 30)
+		self.Library.AccentColor = (0, 225, 242)
+		self.Library.BackgroundColor = (5, 2, 21)
+		self.Library.OutlineColor = (0, 0, 6)
+
+		self.Library.AccentColorDark = self.Library:GetDarkerColor(self.Library.AccentColor);
+		self.Library:UpdateColorsUsingRegistry()
 		end)
 		
 		groupbox:AddDropdown('ThemeManager_ThemeList', { Text = 'Theme list', Values = ThemesArray, Default = 1 })
